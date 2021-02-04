@@ -1,19 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { Theme, Themes } from "./types";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Theme } from "./types";
 
-const initialState: Theme = { currentTheme: Themes.ligth };
+const initialState: Theme = { currentTheme: "light" };
+
 const theme = createSlice({
   name: "theme",
   initialState: {
     theme: initialState,
   },
   reducers: {
-    changeTheme(state) {
-      if (state.theme.currentTheme === Themes.ligth) {
-        state.theme.currentTheme = Themes.dark;
-      } else {
-        state.theme.currentTheme = Themes.ligth;
-      }
+    changeTheme(state, payload: PayloadAction<Theme>) {
+      state.theme = payload.payload;
     },
   },
 });

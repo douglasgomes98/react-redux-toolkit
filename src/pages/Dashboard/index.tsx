@@ -9,6 +9,9 @@ import { Container } from "./styles";
 
 const Dashboard: React.FC = () => {
   const data = useSelector<RootState, Task[]>((store) => store.tasks.list);
+  const theme = useSelector((store: RootState) => store.theme.theme);
+
+  console.log(theme.currentTheme);
 
   return (
     <Container>

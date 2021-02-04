@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import colors from "../../styles/colors";
 
 export const Container = styled.div`
-  background-color: ${colors.ghostBlack};
+  background-color: ${(props) => props.theme.colors.background};
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 `;
