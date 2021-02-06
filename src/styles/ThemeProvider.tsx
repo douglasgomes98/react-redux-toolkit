@@ -5,7 +5,7 @@ import { RootState } from "../store/ConfigureStore";
 import { dark, light } from "./themes";
 
 const Theme: React.FC = ({ children }) => {
-  const {theme} = useSelector((state: RootState) => state.theme);
+  const { theme } = useSelector((state: RootState) => state.theme);
 
   const currentTheme = theme.currentTheme === "light" ? light : dark;
 

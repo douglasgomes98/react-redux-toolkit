@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import colors from "../../styles/colors";
 
 export const Container = styled.div`
   position: absolute;
   top: 0;
   margin-top: 32px;
-  background-color: ${colors.mediumPurple};
+  background-color: ${(props) => props.theme.colors.secundary};
   border-radius: 4px;
   padding: 16px;
   display: flex;
@@ -17,8 +16,8 @@ export const Container = styled.div`
   box-shadow: 0px 2px 14px -8px rgba(0, 0, 0, 0.75);
 
   input {
-    background-color: ${colors.mediumPurple};
-    color: ${colors.ghostBlack};
+    background-color: ${(props) => props.theme.colors.secundary};
+    color: ${(props) => props.theme.colors.background};
     width: 540px;
     padding: 16px;
     border-radius: 4px;
@@ -26,13 +25,13 @@ export const Container = styled.div`
     font-size: 16px;
 
     ::placeholder {
-      color: ${colors.ghostBlack};
+      color: ${(props) => props.theme.colors.background};
     }
   }
 `;
 
 export const Button = styled.div`
-  background-color: ${colors.ghostBlack};
+  background-color: ${(props) => props.theme.colors.background};
   height: 46px;
   width: 46px;
   border-radius: 23px;
@@ -41,7 +40,7 @@ export const Button = styled.div`
   justify-content: center;
 
   :hover {
-    background-color: ${colors.maximumBluePurple}
+    background-color: ${(props) => props.theme.colors.ternary};
   }
 
   cursor: pointer;

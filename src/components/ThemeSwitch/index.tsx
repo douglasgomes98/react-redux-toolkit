@@ -10,13 +10,14 @@ export default function ThemeSwitch() {
 
   function handleToggle() {
     const newTheme: Theme = {
-      currentTheme: theme.currentTheme === "light" ? "dark" : theme.currentTheme,
+      currentTheme:
+        theme.currentTheme === "light" ? "dark" : "light",
     };
     dispatch(changeTheme(newTheme));
   }
 
   return (
-    <SwitchWrapper onClick={() => handleToggle()}>
+    <SwitchWrapper onChange={() => handleToggle()}>
       <Switch id="checkbox" type="checkbox" />
       <SwitchLabel htmlFor="checkbox" />
     </SwitchWrapper>

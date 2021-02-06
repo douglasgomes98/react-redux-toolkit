@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import { Button, Container } from './styles';
-import { IoIosAdd } from 'react-icons/io';
-import colors from '../../styles/colors';
-import { useDispatch } from 'react-redux';
-import {addTaskInList} from "../../store/modules/tasks/Tasks.store"
+import React, { useState, useContext } from "react";
+import { Button, Container } from "./styles";
+import { IoIosAdd } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { addTaskInList } from "../../store/modules/tasks/Tasks.store";
+import { ThemeContext } from "styled-components";
 
 const Input: React.FC = () => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const dispatch = useDispatch();
+  const { colors } = useContext(ThemeContext);
 
   function handleAddTask() {
     dispatch(addTaskInList(input));
-    setInput('');
+    setInput("");
   }
 
   return (
@@ -20,11 +21,11 @@ const Input: React.FC = () => {
         type="text"
         placeholder="Add new todo"
         onChange={(event) => setInput(event.target.value)}
-        onKeyPress={(event) => event.key === 'Enter' && handleAddTask()}
+        onKeyPress={(event) => event.key === "Enter" && handleAddTask()}
         value={input}
       />
       <Button onClick={handleAddTask}>
-        <IoIosAdd size={32} color={colors.mediumPurple} />
+        <IoIosAdd size={32} color={colors.secundary} />
       </Button>
     </Container>
   );

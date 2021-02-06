@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import colors from '../../styles/colors';
 
 export const Container = styled.div`
-  background-color: ${colors.maximumBluePurple};
-  color: ${colors.antiqueBlack};
+  background-color: ${(props) => props.theme.colors.ternary};
+  color: ${(props) => props.theme.colors.background};
   min-width: 300px;
   margin-bottom: 8px;
   border-radius: 4px;

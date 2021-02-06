@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import store from "./store/ConfigureStore";
 import Theme from "./styles/ThemeProvider";
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <Provider store={store}>
       <Theme>
