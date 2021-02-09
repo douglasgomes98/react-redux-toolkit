@@ -3,13 +3,15 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: absolute;
   top: 0;
-  margin-top: 32px;
+  margin-top: 96px;
   background-color: ${(props) => props.theme.colors.secundary};
   border-radius: 4px;
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 540px;
 
   -webkit-box-shadow: 0px 2px 14px -8px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 2px 14px -8px rgba(0, 0, 0, 0.75);
@@ -18,7 +20,6 @@ export const Container = styled.div`
   input {
     background-color: ${(props) => props.theme.colors.secundary};
     color: ${(props) => props.theme.colors.background};
-    width: 540px;
     padding: 16px;
     border-radius: 4px;
     border: 0px;
